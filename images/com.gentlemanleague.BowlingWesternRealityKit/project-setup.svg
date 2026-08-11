@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Project setup">
+  <rect width="1200" height="675" fill="#eef3f5"/>
+  <rect x="130" y="105" width="940" height="465" rx="12" fill="#ffffff" stroke="#52616b" stroke-width="4"/>
+  <rect x="175" y="155" width="300" height="365" rx="8" fill="#d9e6ec"/>
+  <rect x="520" y="155" width="505" height="365" rx="8" fill="#1f2a2e"/>
+  <text x="325" y="345" text-anchor="middle" font-family="Arial" font-size="36" fill="#263238">SwiftUI</text>
+  <text x="772" y="345" text-anchor="middle" font-family="Arial" font-size="36" fill="#f5f0df">RealityKit</text>
+</svg>

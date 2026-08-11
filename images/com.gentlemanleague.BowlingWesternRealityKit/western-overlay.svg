@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Western overlay">
+  <rect width="1200" height="675" fill="#f2ead9"/>
+  <path d="M380 675 540 220h120l160 455z" fill="#d49b52"/>
+  <rect x="258" y="340" width="95" height="260" fill="#7b4a2b"/>
+  <rect x="847" y="340" width="95" height="260" fill="#7b4a2b"/>
+  <rect x="450" y="160" width="300" height="76" rx="8" fill="#8a3324"/>
+  <text x="600" y="209" text-anchor="middle" font-family="Arial" font-size="32" font-weight="700" fill="#fff2c4">GENTLEMAN</text>
+  <circle cx="600" cy="440" r="48" fill="#2e5266"/>
+</svg>
