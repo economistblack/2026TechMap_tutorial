@@ -1,0 +1,49 @@
+@Tutorial(time: 35) {
+    @Intro(title: "Western Background Replacement") {
+        RealityKit 엔티티와 배경 합성을 사용해 볼러는 원본 영상으로 유지하고, 볼러 뒤의 볼링장 배경만 살룬과 석양이 있는 서부극 장면으로 바꿉니다.
+
+        @Image(source: "gentlemanleague-style-reference.png", alt: "젠틀맨리그 서부극 볼링 스타일 레퍼런스")
+    }
+
+    @Section(title: "RealityKit 배경 장면 구성") {
+        @ContentAndMedia {
+            젠틀맨리그 스타일은 단순한 카우보이 장식이 아니라, 볼러 뒤의 볼링장 배경이 서부 마을로 바뀌는 경험입니다. 볼링 레인은 서부 마을의 중앙 도로처럼 보이고, 오렌지 석양, 목조 살룬, 검은 잉크 라인, 핀과 볼링공이 함께 보여야 콘셉트가 바로 전달됩니다.
+        }
+
+        @Steps {
+            @Step {
+                배경 교체에 사용할 서부극 에셋 목록을 정의합니다.
+
+                @Code(name: "WesternOverlayAsset.swift", file: "05-WesternOverlayAsset.swift")
+            }
+
+            @Step {
+                실시간 레인 기준 값을 RealityKit 배경 장면의 원근 위치로 변환합니다.
+
+                @Code(name: "WesternOverlayBuilder.swift", file: "06-WesternOverlayBuilder.swift")
+            }
+
+            @Step {
+                볼러 마스크 바깥 영역에만 서부극 배경이 보이도록 합성 순서를 정합니다.
+
+                @Code(name: "MaskedWesternCompositor.swift", file: "10-MaskedWesternCompositor.swift")
+            }
+        }
+    }
+
+    @Section(title: "젠틀맨리그 톤 적용") {
+        @ContentAndMedia {
+            시각 톤은 과하게 어둡게 만들기보다 볼러의 투구 자세와 공의 움직임을 선명하게 유지하는 방향으로 잡습니다. 살룬 간판은 핀 방향 끝에, 목조 건물과 난간은 레인 양옆 배경에, 먼지와 석양빛은 화면 가장자리와 원근선 주변에 배치합니다.
+        }
+
+        @Steps {
+            @Step {
+                볼러의 몸, 손, 공, 투구 궤적을 가리지 않도록 선인장, 서부극 세트, 배럴, 마차 바퀴를 레일 바깥쪽에 낮게 배치합니다.
+            }
+
+            @Step {
+                간판, 배지, 목재 레일처럼 콘셉트를 즉시 전달하는 에셋부터 우선 적용합니다.
+            }
+        }
+    }
+}

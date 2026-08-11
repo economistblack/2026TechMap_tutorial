@@ -1,0 +1,55 @@
+@Tutorial(time: 30) {
+    @Intro(title: "Bowler Segmentation and Lane Mapping") {
+        촬영 중 Vision으로 볼러 영역을 분리하고, ARKit과 레인 기준 인식으로 볼러 뒤 배경을 서부극 장면에 맞게 정렬합니다.
+
+        @Image(source: "lane-detection.svg", alt: "볼링 레인 인식 결과")
+    }
+
+    @Section(title: "볼러 마스크와 AR 기준 잡기") {
+        @ContentAndMedia {
+            가장 중요한 목표는 볼러를 지우지 않는 것입니다. Vision의 사람 세그멘테이션으로 볼러 마스크를 만들고, ARKit의 카메라 추적과 수평면 인식으로 서부극 배경이 실제 볼링장 원근과 맞아 보이도록 기준 좌표를 잡습니다.
+        }
+
+        @Steps {
+            @Step {
+                레인의 중심, 폭, 소실점 방향을 표현하는 `BowlingLaneAnchorDescription` 값을 만듭니다.
+
+                @Code(name: "LaneAnchorDescription.swift", file: "03-LaneAnchorDescription.swift")
+            }
+
+            @Step {
+                ARKit 월드 트래킹 세션에서 수평면 감지를 켭니다.
+
+                @Code(name: "LiveARSessionView.swift", file: "04-LiveARSessionView.swift")
+            }
+
+            @Step {
+                AR 프레임을 Vision 분석기로 전달해 볼러 마스크를 생성합니다.
+
+                @Code(name: "BowlerSegmentationModel.swift", file: "09-BowlerSegmentationModel.swift")
+            }
+
+            @Step {
+                볼러 마스크를 제외한 배경 영역에서 레인 경계선 후보를 찾습니다.
+
+                @Code(name: "LiveLaneDetector.swift", file: "09-LiveLaneDetector.swift")
+            }
+        }
+    }
+
+    @Section(title: "배경 교체를 위한 보정") {
+        @ContentAndMedia {
+            실제 볼링장은 조명, 반사, 카메라 각도가 다르므로 첫 버전에서는 자동 추정 후 사용자가 레인의 방향을 한 번 보정할 수 있게 만듭니다. 볼러 마스크는 원본 카메라 영상 위에 남기고, 마스크 바깥의 배경만 서부극 장면으로 교체합니다.
+        }
+
+        @Steps {
+            @Step {
+                첫 버전에서는 사용자가 레인의 앞쪽 두 모서리와 핀 방향을 한 번 보정할 수 있게 합니다.
+            }
+
+            @Step {
+                이후 Vision 또는 Core ML 모델 결과를 같은 구조로 변환해 배경 정렬과 합성 코드는 그대로 유지합니다.
+            }
+        }
+    }
+}

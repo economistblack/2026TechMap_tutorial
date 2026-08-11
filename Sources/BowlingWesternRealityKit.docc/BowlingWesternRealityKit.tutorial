@@ -1,0 +1,31 @@
+@Tutorials(name: "Bowling Western RealityKit") {
+    @Intro(title: "볼러는 살리고 배경은 서부극으로 바꾸기") {
+        RealityKit, ARKit, Vision으로 볼링 투구 촬영 중 볼러는 원본 그대로 보존하고, 볼러를 제외한 배경을 젠틀맨리그 스타일의 서부극 장면으로 실시간 변환한 뒤 녹화 저장하는 앱의 핵심 흐름을 단계별로 학습합니다.
+
+        @Image(source: "gentlemanleague-style-reference.png", alt: "젠틀맨리그 서부극 볼링 스타일 레퍼런스")
+    }
+
+    @Chapter(name: "앱 기반 만들기") {
+        @Image(source: "project-setup.svg", alt: "SwiftUI와 RealityKit 프로젝트 구조")
+
+        @TutorialReference(tutorial: "doc:01-ProjectSetup")
+    }
+
+    @Chapter(name: "볼러 분리와 레인 기준 잡기") {
+        @Image(source: "lane-detection.svg", alt: "촬영 중 볼러와 볼링 레인 기준선을 인식하는 화면")
+
+        @TutorialReference(tutorial: "doc:02-LaneDetection")
+    }
+
+    @Chapter(name: "서부극 배경으로 교체하기") {
+        @Image(source: "western-overlay.svg", alt: "볼러 뒤 배경이 서부극 장면으로 교체된 화면")
+
+        @TutorialReference(tutorial: "doc:03-WesternOverlay")
+    }
+
+    @Chapter(name: "AR 촬영 결과 저장하기") {
+        @Image(source: "video-export.svg", alt: "서부극 AR 오버레이가 적용된 촬영 결과 저장 화면")
+
+        @TutorialReference(tutorial: "doc:04-VideoExport")
+    }
+}

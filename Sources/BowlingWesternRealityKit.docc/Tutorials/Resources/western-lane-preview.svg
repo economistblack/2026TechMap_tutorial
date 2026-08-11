@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Western bowling lane preview">
+  <rect width="1200" height="675" fill="#f6f0e4"/>
+  <rect y="420" width="1200" height="255" fill="#6b4a2f"/>
+  <path d="M440 675 560 260h80l120 415z" fill="#c99a5b"/>
+  <path d="M500 675 585 260h30l85 415z" fill="#f3d28a"/>
+  <rect x="455" y="180" width="290" height="80" rx="8" fill="#8b3f2a"/>
+  <text x="600" y="232" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#fff5d6">SALOON LANE</text>
+</svg>

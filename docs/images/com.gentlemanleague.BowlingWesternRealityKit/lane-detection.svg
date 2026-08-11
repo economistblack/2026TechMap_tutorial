@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Lane detection">
+  <rect width="1200" height="675" fill="#202b30"/>
+  <path d="M360 650 535 125h130l175 525z" fill="#b77a3f"/>
+  <path d="M420 650 570 125M780 650 630 125M600 650V125" stroke="#f8e7a7" stroke-width="8" fill="none"/>
+  <circle cx="600" cy="125" r="14" fill="#e63946"/>
+  <text x="600" y="82" text-anchor="middle" font-family="Arial" font-size="30" fill="#f8e7a7">Lane Anchor</text>
+</svg>

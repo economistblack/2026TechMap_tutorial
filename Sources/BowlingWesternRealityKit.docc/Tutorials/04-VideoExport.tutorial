@@ -1,0 +1,47 @@
+@Tutorial(time: 30) {
+    @Intro(title: "AR Recording Pipeline") {
+        촬영 중 보이는 볼러 원본 영상과 서부극으로 교체된 배경을 하나의 공유 가능한 영상으로 녹화 저장하는 파이프라인을 설계합니다.
+
+        @Image(source: "video-export.svg", alt: "영상 내보내기 흐름")
+    }
+
+    @Section(title: "AR 화면 녹화 저장") {
+        @ContentAndMedia {
+            프로토타입에서는 ReplayKit으로 화면에 보이는 합성 결과를 빠르게 녹화할 수 있습니다. 제품 단계에서는 카메라 프레임, 볼러 마스크, RealityKit 배경 렌더 결과, 오디오를 더 정교하게 제어하기 위해 AVFoundation 기반 저장 파이프라인으로 확장할 수 있습니다.
+        }
+
+        @Steps {
+            @Step {
+                촬영 작업 상태를 `idle`, `scanningPlane`, `segmentingBowler`, `detectingLane`, `backgroundReady`, `recording`, `saved`로 나눕니다.
+
+                @Code(name: "LiveCaptureState.swift", file: "07-LiveCaptureState.swift")
+            }
+
+            @Step {
+                ReplayKit 기반 녹화 인터페이스를 정의합니다.
+
+                @Code(name: "WesternARRecorder.swift", file: "08-WesternARRecorder.swift")
+            }
+
+            @Step {
+                녹화가 끝나면 미리보기, 공유, 사진 보관함 저장 UI에 연결합니다.
+            }
+        }
+    }
+
+    @Section(title: "GitHub Pages 배포 준비") {
+        @ContentAndMedia {
+            DocC 산출물은 정적 호스팅에 맞게 변환한 뒤 `docs` 폴더로 내보냅니다. GitHub Pages의 base path는 저장소 이름인 `2026TechMap_tutorial`과 일치시킵니다.
+        }
+
+        @Steps {
+            @Step {
+                `xcrun docc convert` 명령으로 `docs` 폴더를 생성합니다.
+            }
+
+            @Step {
+                GitHub Pages 설정에서 GitHub Actions 배포를 활성화합니다.
+            }
+        }
+    }
+}

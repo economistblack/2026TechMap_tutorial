@@ -1,0 +1,49 @@
+@Tutorial(time: 20) {
+    @Intro(title: "Project Setup") {
+        SwiftUI 앱에서 ARKit 카메라 세션, Vision 사람 분리, RealityKit 배경 장면을 연결해 촬영 중 배경 변환을 표시할 준비를 합니다.
+
+        @Image(source: "project-setup.svg", alt: "프로젝트 설정 화면")
+    }
+
+    @Section(title: "SwiftUI와 RealityKit 연결") {
+        @ContentAndMedia {
+            RealityKit 장면을 SwiftUI 화면에 올리기 위해 `ARView`를 감싸는 컨테이너를 만듭니다. 이 튜토리얼에서는 실시간 카메라 입력, 볼러 세그멘테이션, 레인 기준 인식, 서부극 배경 합성, 녹화 저장을 붙일 수 있는 앱 뼈대를 먼저 준비합니다.
+
+            @Image(source: "reality-view-container.svg", alt: "RealityView 컨테이너")
+        }
+
+        @Steps {
+            @Step {
+                새 SwiftUI 앱 또는 Swift Package를 만들고 iOS 17 이상을 배포 대상으로 설정합니다.
+            }
+
+            @Step {
+                `ContentView`에 AR 카메라 미리보기와 촬영 버튼을 추가합니다.
+
+                @Code(name: "ContentView.swift", file: "01-ContentView.swift")
+            }
+
+            @Step {
+                실시간 촬영, 볼러 분리, 배경 교체 상태를 표현할 모델 타입을 추가합니다.
+
+                @Code(name: "LiveCaptureModel.swift", file: "02-LiveCaptureModel.swift")
+            }
+        }
+    }
+
+    @Section(title: "권한과 입력 준비") {
+        @ContentAndMedia {
+            촬영 중 볼러와 배경을 분리하는 앱이므로 카메라 권한이 필수입니다. 녹화 저장과 음성 녹음까지 포함한다면 마이크와 사진 보관함 저장 권한도 함께 선언합니다.
+        }
+
+        @Steps {
+            @Step {
+                `Info.plist`에 카메라, 마이크, 사진 보관함 저장 권한 설명을 추가합니다.
+            }
+
+            @Step {
+                앱 화면에는 AR 미리보기, 볼러 분리 상태, 배경 변환 상태, 녹화 시작/정지 버튼을 배치합니다.
+            }
+        }
+    }
+}
